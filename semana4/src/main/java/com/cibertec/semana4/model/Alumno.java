@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -22,4 +24,16 @@ public class Alumno {
     private String apellido;
     private String usuario;
     private String password;
+    @ManyToOne
+    private Carrera carrera;
+    @OneToOne
+    private Persona persona; //bidireccional
+    @OneToOne
+    private Persona2 persona2; //unidireccional
+    @ManyToOne
+    private Carrera2 carrera2;
+    @ManyToMany
+    private List<Curso> curso;
+    @ManyToMany
+    private List<Curso2> curso2;
 }

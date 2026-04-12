@@ -20,4 +20,8 @@ public class AlumnoService {
         return alumnoRepository.findAllByOrderByApellidoDesc();
     }
 
+    public Alumno save(Alumno alumno){
+        return alumnoRepository.save(alumno);
+    }
+
 }
