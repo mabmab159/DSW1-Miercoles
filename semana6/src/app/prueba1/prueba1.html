@@ -1,0 +1,22 @@
+<p>prueba1 works!</p>
+
+<h2>Este es un titulo desde el componente de prueba1</h2>
+
+<p>{{ nombre }}</p>
+<p>{{ cantidad }}</p>
+
+@if (cantidad >= 10) {
+  <div>
+    <p>El valor de cantidad es mayor a 10</p>
+  </div>
+}
+
+@for(nombre of nombres; track nombre){
+  <p>{{nombre}}</p>
+}
+
+<div>
+  <h1>Informacion del pokemon</h1>
+  <p>{{pokemon.base_experience}}</p>
+  <p></p>
+</div>
