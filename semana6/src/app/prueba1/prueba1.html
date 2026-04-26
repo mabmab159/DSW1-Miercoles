@@ -20,3 +20,25 @@
   <p>{{pokemon.base_experience}}</p>
   <p></p>
 </div>
+
+@for(usuario of listaUsuarios; track usuario.id){
+  <p>{{usuario.id}}</p>
+  <p>{{usuario.usuario}}</p>
+  <p>{{usuario.nombres}}</p>
+}
+
+<h2>Lista de usuarios protegidos</h2>
+
+@for(usuario of listaUsuariosProtegidos; track usuario.id){
+  <p>{{usuario.id}}</p>
+  <p>{{usuario.usuario}}</p>
+  <p>{{usuario.nombres}}</p>
+}
+
+
+<div>
+  <p>Este es el texto a recuperarse de forma dinamica</p>
+  <input id="textoGenerativo" [(ngModel)]="textoGenerativo" />
+  <p>Texto generativo: {{textoGenerativo}}</p>
+  <button (click)="mostrarTextoGenerativo()">Activar Funcion</button>
+</div>

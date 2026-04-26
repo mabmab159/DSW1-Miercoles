@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/usuarios")
 @RequiredArgsConstructor
 public class UsuarioController {
@@ -21,14 +22,18 @@ public class UsuarioController {
     private final UsuarioService usuarioService;
 
     @GetMapping
-    public ResponseEntity<List<Object>> getUsuarios() {
-        List<Object> list = new ArrayList<>();
+    public ResponseEntity<List<Usuario>> getUsuarios() {
+        List<Usuario> list = new ArrayList<>();
+        list.add(new Usuario(1L, "miguel", "miguel", "miguel", "miguel", "miguel", "miguel", null));
+        list.add(new Usuario(2L, "miguel2", "miguel", "miguel berrio", "miguel", "miguel", "miguel", null));
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @GetMapping("/unprotected")
-    public ResponseEntity<List<Object>> getUnprotectedUsuarios() {
-        List<Object> list = new ArrayList<>();
+    public ResponseEntity<List<Usuario>> getUnprotectedUsuarios() {
+        List<Usuario> list = new ArrayList<>();
+        list.add(new Usuario(1L, "miguel", "miguel", "miguel", "miguel", "miguel", "miguel", null));
+        list.add(new Usuario(2L, "miguel2", "miguel", "miguel berrio", "miguel", "miguel", "miguel", null));
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
